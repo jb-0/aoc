@@ -27,22 +27,33 @@ const partOne = (games) => {
   }, 0);
 };
 
-const partOneResult = partOne(data.partOne.split("\n"));
+const partOneResult = partOne(data.raw.split("\n"));
+
+// Part 2
+const partTwo = (games) => {
+  return games.reduce((prev, game) => {
+    const { red, green, blue } = getHighestDrawsByColour(game);
+
+    return prev + red * green * blue;
+  }, 0);
+};
+
+const partTwoResult = partTwo(data.raw.split("\n"));
 
 // Present output in a readable manner
 console.table([
   {
     part: "i",
-    testCasePasses: partOne(data.partOneTest.split("\n")) === data.partOneTestExpect,
+    testCasePasses: partOne(data.test.split("\n")) === data.partOneTestExpect,
     solutionPasses: partOneResult === data.partOneExpect,
     result: partOneResult,
     expected: data.partOneExpect,
   },
-  //   {
-  //     part: "ii",
-  //     testCasePasses: partTwoTestResult === undefined,
-  //     solutionPasses: partTwoResult === undefined,
-  //     result: partTwoResult,
-  //     expected: undefined,
-  //   },
+  {
+    part: "ii",
+    testCasePasses: partTwo(data.test.split("\n")) === data.partTwoTestExpect,
+    solutionPasses: partTwoResult === 78111,
+    result: partTwoResult,
+    expected: 78111,
+  },
 ]);
