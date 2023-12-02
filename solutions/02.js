@@ -1,4 +1,4 @@
-const data = require("./2.data");
+const data = require("../data/02");
 
 // Utils
 const getHighestDrawsByColour = (gameInfo) => {

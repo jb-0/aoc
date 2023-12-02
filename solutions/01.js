@@ -1,4 +1,4 @@
-const { data, partOneTestData, partTwoTestData } = require("./1.data");
+const { data, partOneTestData, partTwoTestData } = require("./01.data");
 
 /**
  * Utils
