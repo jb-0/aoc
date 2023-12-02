@@ -1,8 +1,6 @@
 const { data, partOneTestData, partTwoTestData } = require("./01.data");
 
-/**
- * Utils
- */
+// Utils
 const numberStrings = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 const getNumber = (s) => {
@@ -38,37 +36,23 @@ const findAllNumbersInString = (s) => {
   return numbersOnly;
 };
 
-/**
- * Solution functions
- */
+// Solutions
 const partOne = (stringList) => stringList.split("\n").reduce((prev, curr) => prev + getNumber(curr), 0);
-
 const partTwo = (stringList) =>
   stringList.split("\n").reduce((prev, curr) => prev + getNumber(findAllNumbersInString(curr)), 0);
-
-/**
- * Run solution functions with data
- */
-const partOneTestResult = partOne(partOneTestData);
 const partOneResult = partOne(data);
-
-const partTwoTestResult = partTwo(partTwoTestData);
 const partTwoResult = partTwo(data);
 
-/**
- * Present output in a readable manner
- */
+// Print nicely
 console.table([
   {
-    part: "i",
-    testCasePasses: partOneTestResult === 142,
+    testCasePasses: partOne(partOneTestData) === 142,
     solutionPasses: partOneResult === 55971,
     result: partOneResult,
     expected: 55971,
   },
   {
-    part: "ii",
-    testCasePasses: partTwoTestResult === 281,
+    testCasePasses: partTwo(partTwoTestData) === 281,
     solutionPasses: partTwoResult === 54719,
     result: partTwoResult,
     expected: 54719,
