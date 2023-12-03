@@ -108,6 +108,6 @@ Game 100: 1 green, 11 red, 4 blue; 4 green, 1 red; 9 red, 2 blue; 5 blue, 11 red
 const partOneTestExpect = 8;
 const partTwoTestExpect = 2286;
 const partOneExpect = 2545;
-const partTwoExpect = undefined;
+const partTwoExpect = 78111;
 
 module.exports = { raw, test, partOneTestExpect, partOneExpect, partTwoTestExpect, partTwoExpect };

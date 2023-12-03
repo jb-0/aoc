@@ -50,8 +50,8 @@ console.table([
   },
   {
     testCasePasses: partTwo(data.test.split("\n")) === data.partTwoTestExpect,
-    solutionPasses: partTwoResult === 78111,
+    solutionPasses: partTwoResult === data.partTwoExpect,
     result: partTwoResult,
-    expected: 78111,
+    expected: data.partTwoExpect,
   },
 ]);
