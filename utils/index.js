@@ -1,6 +1,6 @@
 const logResults = (data, partOneFn = () => null, partTwoFn = () => null) => {
   const partOneResult = partOneFn(data.raw);
-  const partTwoResult = partTwoFn(data.raw);
+  const partTwoResult = partTwoFn(data.rawPart2 || data.raw);
 
   console.table([
     {
